@@ -1,0 +1,7 @@
+FROM nginx:alpine
+COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY . /var/www
+
+RUN apk update && apk add --no-cache tzdata
+
+ENV TZ=America/Sao_Paulo
